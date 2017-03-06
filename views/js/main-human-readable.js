@@ -426,7 +426,7 @@ var resizePizzas = function(size) {
    
  // Iterates through pizza elements on the page and changes their widths
   // Resizes the pizzas width if user want to see "small" , "medium" or "large" pizza
-
+  // This function has been modified , got rid off determineDx function as it wasn't anything
   function changePizzaSizes(size) {
     switch (size) {
       case "1":
@@ -441,7 +441,7 @@ var resizePizzas = function(size) {
     }
 
     var randomPizzasContainer = document.getElementsByClassName("randomPizzaContainer");
-    
+    // will run this loop for all the pizzas present on the DOM and changes the width in percentage defined above (in switch statement)
     for (var i = 0; i < randomPizzasContainer.length; i++) {
       randomPizzasContainer[i].style.width = newWidth + '%';
     }
@@ -506,7 +506,7 @@ var top =  window.pageYOffset || window.scrollY;
   // caching items length
   var itemsLength = items.length;
   var itemsPixels;
-  // loops through all the mover classes (items) and by using css property transform (produce back pizza animation)
+  // loops through all the mover classes (items) and by using css property transform instead of style (produce back pizza animation)
   for (i = 0; i < itemsLength; i++) { 
   itemsPixels = items[i].basicLeft + 100 * phaseArray[i%5] ;
  items[i].style.transform = 'translateX('+ ( itemsPixels )+ '%)' ;
